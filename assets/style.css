@@ -1,0 +1,9 @@
+.formHeader {
+    background-color: darkblue;
+    font: white, 40px;
+}
+
+.formgroup1 {
+    width: 75%;
+    padding: 10px;
+}
