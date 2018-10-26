@@ -11,7 +11,8 @@
 	<link rel="stylesheet" type="text/css" media="screen" href="assets/style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 	<script type="text/javascript" src="assets/app.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
    
@@ -20,7 +21,7 @@
 <body>
 <div class="container">   
     <div class="jumbotron jumbotron-fluid">
-        <h1 class="display-4">New York Times Article Search</h1>
+        <h1 class="display-4"><span class="far fa-newspaper"></span> New York Times Article Search</h1>
     </div>
 
     <div class="row">
@@ -39,7 +40,7 @@
             
                         <div class="form-group">
                             <label for="recordNumber">Number of Records to Retrieve:</label>
-                            <select class="form-control" id="recordNumber">
+                            <select class="form-control" id="numRecords">
                                 <option value=1>1</option>
                                 <option value=5 selected>5</option>
                                 <option value=10>10</option>
@@ -56,7 +57,7 @@
                             <input type="text" class="form-control" id="endYear">
                         </div>
             
-                        <button class="btn btn-secondary" type="submit">Search</button>
+                        <button class="btn btn-secondary" type="submit" id="searchBtn">Search</button>
                         <input class="btn btn-secondary" type="reset" value="Clear Results">
             
                     </form>
@@ -122,6 +123,7 @@
 
         </form>
     </div> -->
+    <img src="assets/images/poweredby_nytimes_150c.png">
 </div> 
 
 </body>
