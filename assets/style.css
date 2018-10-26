@@ -1,8 +1,37 @@
 .jumbotron {
-    background-color: lightgrey;
+    background-color: #0E2F44;
 }
 
-.formgroup1 {
-    width: 75%;
-    padding: 10px;
+.jumbotronStyle {
+    font-family: 'Cabin Sketch', cursive;
+    color: #EDEBF0;
+    font-size: 50px;
+}
+
+.fa-newspaper {
+    color: #EDEBF0; 
+    margin: 10px;
+}
+
+.panel-title {
+    font-family:'Cabin Sketch', cursive;
+    font-size: 30px;
+    color: #0E2F44;
+    
+}
+
+label {
+    color: grey;
+    font-family: 'Oswald', sans-serif;
+    font-kerning: normal;
+    font-size: 18px;
+
+}
+
+button {
+    font-family: 'Oswald', sans-serif;   
+}
+
+input {
+    font-family: 'Oswald', sans-serif;
 }

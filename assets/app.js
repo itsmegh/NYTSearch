@@ -23,6 +23,46 @@ $(document).ready(function(){
     $.ajax({url: queryurl, method: "GET"})
     .done(function(NYTdata) {
 
+      //clear the wells from the previous search
+      $("#wellSection").empty();
+
+      //looping through the information we want from the JSON
+      for(var i=0; i<numArticles; i++) { //NYTdata.response.docs.length -- what we had in our loop at first to check that it's working
+        console.log(NYTdata.response.docs[i].headline.main);
+        console.log(NYTdata.response.docs[i].news_desk);
+        console.log(NYTdata.response.docs[i].pub_date);
+        console.log(NYTdata.response.docs[i].byline.original);
+        console.log(NYTdata.response.docs[i].web_url);
+
+        //start dumping to HTML here
+        //created a new variable that will hold the attributes for the html id we created "wellSection"
+        var wellSection = $("<div>");
+        wellSection.addClass("well");
+        wellSection.attr("id", "articleWell-" + i);
+        //add the new variable and attributes we created to the html id
+        $("#wellSection").append(wellSection);
+
+        if(NYTdata.response.docs[i].headline != "null") {
+          console.log(NYTdata.response.docs[i].headline.main);
+          $("#articleWell-" + i).append("<h3>" + NYTdata.response.docs[i].headline.main + "</h3>");
+        }
+
+        //check if the byline is there
+        if(NYTdata.response.docs[i].byline && NYTdata.response.docs[i].byline.hasOwnProperty("original")) {
+          console.log(NYTdata.response.docs[i].byline.original);
+          $("#articleWell-" + i).append("<h5>" + NYTdata.response.docs[i].byline.original + "</h5>");
+        } 
+
+        //attached the content to the appropriate well
+        $("#articleWell-" + i).append("<h5>" + NYTdata.response.docs[i].news_desk + "</h5>");
+        $("#articleWell-" + i).append("<h5>" + NYTdata.response.docs[i].pub_date + "</h5>");
+        $("#articleWell-" + i).append("<h5>" + NYTdata.response.docs[i].snippet + "</h5>");
+        $("#articleWell-" + i).append("<a href=" + NYTdata.response.docs[i].web_url + ">" + NYTdata.response.docs[i].web_url + "</a>");
+
+
+      }
+
+
       //log to the console so we have access to the information we need
       console.log(queryurl);
       console.log(NYTdata);
@@ -37,13 +77,14 @@ $(document).ready(function(){
   $("#searchBtn").on("click", function() {
     
     queryTerm = $("#search").val().trim();
-    console.log(queryTerm);
+    //console.log(queryTerm);
 
     //add in the search term
     var newURL = queryurlBase + "&q=" + queryTerm;
-    console.log(newURL);
+    //console.log(newURL);
 
     //get the number of records
+    numResults = $("#numRecords").val();
 
     //get the start and end year
     startYear = $("#startYear").val().trim();
@@ -62,7 +103,8 @@ $(document).ready(function(){
     console.log(newURL);
 
     //send the AJAX call the new assembled URL
-    runQuery(10, newURL);
+    runQuery(numResults, newURL); // removed the hard coded number and replace with numResults
+    //initially had a 10 and a url that pulled test results before replacing with our new variables
 
     return false; //prevents a new page refresh
 
@@ -75,20 +117,4 @@ $(document).ready(function(){
 // 5. Deal with "edge cases" -- bugs that aren't obvious or didn't expect
 
 
-
-
-    
-    
-    $.ajax({
-      url: queryurl,
-      method: 'GET',
-    })
-    
-    .done(function(response) {
-      console.log(response);
-      console.log(queryurl);
-    })
-
-    var searchTerm = queryurl + "&q=xyz";
-    $(".search").text(searchTerm);
 });

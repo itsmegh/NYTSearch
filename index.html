@@ -8,20 +8,23 @@
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     
-	<link rel="stylesheet" type="text/css" media="screen" href="assets/style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-	<script type="text/javascript" src="assets/app.js"></script>
+    <script type="text/javascript" src="assets/app.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch|Oswald" rel="stylesheet">
+
+
    
 </head>
 
 <body>
 <div class="container">   
     <div class="jumbotron jumbotron-fluid">
-        <h1 class="display-4"><span class="far fa-newspaper"></span> New York Times Article Search</h1>
+        <span class="jumbotronStyle"><h1 class="display-4"><span class="far fa-newspaper"></span> New York Times Article Search</h1></span>
     </div>
 
     <div class="row">
@@ -70,11 +73,11 @@
         <div class="col-md-12">
             <!--Results Panel-->
             <div class="panel panel-default">
-                <div class="panel-heading">
+               <div class="panel-heading">
                     <h3 class="panel-title">Search Results</h3>
                 </div>
-                <div class="panel-body">
-                    <div class="well">
+                <div class="panel-body" id="wellSection">
+                    <!-- <div class="well">
                         <h2>Title</h2>
                         <h3>Author</h3>
                         <h4>Section</h4>
@@ -87,7 +90,7 @@
                         <h4>Section</h4>
                         <h4>Date</h4>
                         <h4>Link</h4>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -125,6 +128,7 @@
     </div> -->
     <img src="assets/images/poweredby_nytimes_150c.png">
 </div> 
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/style.css">
 
 </body>
 </html>
