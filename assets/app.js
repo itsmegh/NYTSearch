@@ -1,7 +1,7 @@
 $(document).ready(function(){
 //SETUP VARIABLES
 //==========================
-  var APIKey = "59944c64d39b4d578acf50b00ab62ffd";
+  var APIKey = "67b8b07723c64905903d180a100c7463";
 
   //search parameters
   var queryTerm = "";
