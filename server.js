@@ -4,7 +4,7 @@ var app = express();
 
 var PORT = process.env.PORT || 8080;
 var corsOptions = {
-  origin: process.env.ORIGIN_URL || "http://localhost",
+  origin: process.env.ORIGIN_URL || "https://localhost",
   optionsSuccessStatus: 200
 };
 
