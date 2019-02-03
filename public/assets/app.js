@@ -10,7 +10,7 @@ $(document).ready(function(){
   var endYear = 0;
 
         
-  var queryurlBase = "https://cors-anywhere.herokuapp.com/https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=" + APIKey ;
+  var queryurlBase = "/api/https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=" + APIKey ;
 
   //variable to track the number of articles
   var articleCounter = 0;
