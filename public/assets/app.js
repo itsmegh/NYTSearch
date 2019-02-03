@@ -1,7 +1,7 @@
 $(document).ready(function(){
 //SETUP VARIABLES
 //==========================
-  var APIKey = "67b8b07723c64905903d180a100c7463";
+  //var APIKey = "67b8b07723c64905903d180a100c7463";
 
   //search parameters
   var queryTerm = "";
@@ -10,7 +10,7 @@ $(document).ready(function(){
   var endYear = 0;
 
         
-  var queryurlBase = "/api/https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=" + APIKey ;
+  var queryurlBase = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=" + process.env.APIKey ;
 
   //variable to track the number of articles
   var articleCounter = 0;
